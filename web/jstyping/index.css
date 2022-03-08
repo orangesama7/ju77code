@@ -1,0 +1,141 @@
+* {
+  /* margin: 0; */
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  /* outline: 1px dashed purple; */
+}
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(#99f,#f99);
+}
+.keyboard {
+  outline-width: 3px;
+  background-color: white;
+  border-radius: 7px;
+  background-color:oldlace; 
+}
+
+ul.row {
+  display: flex;
+  /* height: 300px; */
+}
+ul.row li {
+  outline-width: 2px;
+  width: 3em;
+  height: 3em;
+  text-align: center;
+  line-height: 3em;
+  border-radius: .4em;
+  color: rgba(0, 0, 0, .7);
+  letter-spacing: 1px;
+  margin: 0.4em;
+}
+
+
+/*设置按键长度*/
+#tab {
+  width: 5em;
+}
+
+#caps {
+  width: 6em;
+}
+
+#leftShift {
+  width: 8em;
+}
+
+#enter {
+  width: 6em;
+}
+
+#rightShift {
+  width: 8em;
+}
+
+#back {
+  width: 5em;
+}
+
+
+/*设置按键颜色*/
+.little {
+  background-color: #f9e4c9;
+  border: 2px solid #f9e4c9;
+}
+.little.selected {
+  background-color: transparent;
+  color: #f9e4c9;
+}
+.ring {
+  background-color: #f0cbc2;
+  border: 2px solid #f0cbc2;
+}
+.ring.selected {
+  background-color: transparent;
+  color: #f0cbc2;
+}
+.middle {
+  background-color: #b9aeb9;
+  border: 2px solid #b9aeb9;
+}
+.middle.selected {
+  background-color: transparent;
+  color: #b9aeb9;
+}
+.forefinger1st {
+  background-color: #a0c1e2;
+  border: 2px solid #a0c1e2;
+}
+.forefinger1st.selected {
+  background-color: transparent;
+  color: #a0c1e2;
+}
+.forefinger2nd {
+  background-color: #d6e8f6;
+  border: 2px solid #d6e8f6;
+}
+.forefinger2nd.selected {
+  background-color: transparent;
+  color: #d6e8f6;
+}
+.selected {
+  animation: selected .3s infinite;
+}
+
+/*动画效果*/
+@keyframes selected {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, -2px);
+  }
+  80% {
+    transform: translate(2px, 2px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+.press {
+  animation: press .3s;
+}
+@keyframes press {
+  0% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
