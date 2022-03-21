@@ -149,7 +149,14 @@ namespace WindowsFormsApp1
 
         private void listBox1_DoubleClick(object sender, EventArgs e)
         {
-            
+            string path = list[listBox1.SelectedIndex];
+            using (FileStream fsRead = new FileStream(path, FileMode.OpenOrCreate, FileAccess.Read))
+            {
+                byte[] buffer = new byte[1024 * 1024 * 5];
+                //实际读取到的字节数
+                int r = fsRead.Read(buffer, 0, buffer.Length);
+                textBox1.Text = Encoding.Default.GetString(buffer, 0, r);
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
